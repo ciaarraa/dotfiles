@@ -40,6 +40,10 @@ PACKAGES=(
 	zsh
 	olets/tap/zsh-abbr
 	neovim
+	glab
+	pre-commit
+	socat
+	magic-wormhole
 )
 brew install "${PACKAGES[@]}"
 
@@ -50,6 +54,8 @@ CASKS=(
 	rectangle
 	raycast
 	visual-studio-code
+	postman
+	zoom
 	)
 
 #install casks
@@ -57,6 +63,15 @@ echo "installing casks"
 brew install --cask "${CASKS[@]}"
 
 
+#install oh my zsh 
+if [[ ! -f ~/.zshrc ]]; then
+	echo ''
+	echo '##### Installing oh-my-zsh...'
+	curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
+	cp ~/.zshrc ~/.zshrc.orig
+	cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+	chsh -s /bin/zsh
+#fi
 
 
