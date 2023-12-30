@@ -1,0 +1,9 @@
+[user]
+	name = CiaraTully
+[rebase]
+	autosquash = true
+	
+[diff]
+	tool = nvimdiff
+[core]
+	editor = nvim
